@@ -21,7 +21,7 @@ console.log('abriu');
 app.use(express.static(__dirname + '/public'));
 
 // get the app environment from Cloud Foundry
-var appEnv = cfenv.getAppEnv();
+//var appEnv = cfenv.getAppEnv();
 
 app.get('/resultado',function(req,resp){
 	console.log('resultado');
@@ -52,11 +52,10 @@ app.get('/resultado',function(req,resp){
 });
 c.queue('http://www.amazon.com');
 });
-
 // start server on the specified port and binding host
-app.listen(appEnv.port, '0.0.0.0', function() {
+app.listen(3097, '10.0.0.9', function() {
   // print a message when the server starts listening
-  console.log("server starting on " + appEnv.url);
+  //console.log("server starting on " + appEnv.url);
 });
 
 
